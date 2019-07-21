@@ -16,39 +16,6 @@ public class DressesObjects extends BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "*//div/ul/li[2]//a[@title='Dresses']")
-	private WebElement dressestab;
-
-	public WebElement getdressestab() {
-		return dressestab;
-	}
-	
-	public void clickdresses() {
-		dressestab.click();
-	}
-	
-	@FindBy(xpath = "*//a[@title='Women']")
-	private WebElement womenstab;
-	
-	public WebElement getWomenstab() {
-		return womenstab;
-	}
-	
-	public void clickwomens() {
-		womenstab.click();
-	}
-	
-	@FindBy(xpath = "*//ul/li[3]/a[@title='T-shirts']")
-	private WebElement Tshirtstab;
-	
-	public WebElement getTshirtstab() {
-		return Tshirtstab;
-	}
-	
-	public void clickTshirts() {
-		Tshirtstab.click();
-	}
-
 	@FindBy(xpath = "//div/ul/li/a[contains(@title,'You are looking for a dress')]")
 	private WebElement casualdresses;
 
@@ -101,39 +68,6 @@ public class DressesObjects extends BasePage {
 		return productcount.size();
 	}
 	
-	@FindBy(id="newsletter-input")
-	private WebElement newsletter;
-	
-	@FindBy(name = "submitNewsletter")
-	private WebElement submitnews;
-	
-	public WebElement getSubscriptiontab() {
-		return newsletter;
-	}
-	
-	public WebElement sendSubscription() {
-		return submitnews;
-	}
-	
-	public void getsubscription() {
-		Random numb = new Random();
-		int number = numb.nextInt(50000);
-		setText(newsletter, "automation" + number + "@gmail.com");
-		System.out.println(number);
-		submitnews.click();
-	}
-	
-	@FindBy(xpath = "//p[@class='alert alert-success']")
-	private WebElement subscriptionmessage;
-	
-	public WebElement getsubscribemessage() {
-		return subscriptionmessage;
-	}
-	
-	public String getsubscriptionmessage() {
-		return subscriptionmessage.getText();
-	}
-	
 	@FindBy(xpath = "*//img[@title='Faded Short Sleeve T-shirts']")
 	private WebElement product;
 	
@@ -143,27 +77,6 @@ public class DressesObjects extends BasePage {
 	
 	public void clickproduct() {
 		product.click();
-	}
-	
-	@FindBy(xpath = "*//button[contains(@onclick,'socialsharing_twitter_click')]")
-	private WebElement tweet;
-	
-	public WebElement getTweet() {
-		return tweet;
-	}
-	
-	@FindBy(xpath = "*//button[contains(@onclick,'socialsharing_facebook_click();')]")
-	private WebElement facebook;
-	
-	public WebElement getFacebook() {
-		return facebook;
-	}
-	
-	@FindBy(id = "short_description_content")
-	private WebElement productdescription;
-	
-	public WebElement getProductDes() {
-		return productdescription;
 	}
 	
 	@FindBy(xpath = "*//button[@class='exclusive']")

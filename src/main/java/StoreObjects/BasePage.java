@@ -56,6 +56,4 @@ public class BasePage {
 	public void getintodefault() {
 		driver.switchTo().defaultContent();
 	}
-
-
 }

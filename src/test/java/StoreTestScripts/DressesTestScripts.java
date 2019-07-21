@@ -3,6 +3,7 @@ package StoreTestScripts;
 import StoreObjects.BasePage;
 
 import StoreObjects.DressesObjects;
+import StoreObjects.HomePageObjects;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,40 +16,17 @@ public class DressesTestScripts extends BasePage {
 	
 	DressesObjects dresses;
 	BasePage bp;
+	HomePageObjects HomePage;
 	
 	public DressesTestScripts() {
 		dresses = new DressesObjects();
 		bp = new BasePage();
+		HomePage = new HomePageObjects();
 	}
 	
 	@Test(enabled = true)
-	public void verifytabs() {
-		Assert.assertTrue(bp.elementFound(dresses.getdressestab()));
-		Assert.assertTrue(bp.elementFound(dresses.getWomenstab()));
-		Assert.assertTrue(bp.elementFound(dresses.getTshirtstab()));
-	}
-	
-	@Test(enabled = true)
-	public void verifydressestab() {
-		dresses.clickdresses();
-		Assert.assertTrue(bp.getTitlte().equals("Dresses - My Store"));
-		}
-	
-	@Test(enabled = false)
-	public void verifywomenstab() {
-		dresses.clickwomens();
-		Assert.assertTrue(bp.getTitlte().equals("Women - My Store"));
-	}
-	
-	@Test(enabled = false)
-	public void verifyTshirtstab() {
-		dresses.clickTshirts();
-		Assert.assertTrue(bp.getTitlte().equals("T-shirts - My Store"));
-	}
-	
-	@Test(enabled = false)
 	public void verifycasualdresses() {
-		dresses.clickdresses();
+		HomePage.clickdresses();
 		dresses.clickcasualdresses();
 		Assert.assertTrue(bp.getTitlte().equals("Casual Dresses - My Store"));
 	}
@@ -68,25 +46,8 @@ public class DressesTestScripts extends BasePage {
 	}
 	
 	@Test(enabled = false)
-	public void verifysubscription() {
-		dresses.getsubscription();
-		Assert.assertTrue(dresses.getsubscriptionmessage().contains("successfully subscribed"));
-	}
-	
-	@Test(enabled = false)
-	public void verifysociallink() {
-		dresses.clickwomens();
-		dresses.clickproduct();
-		dresses.gotoFrame();
-		Assert.assertTrue(bp.elementFound(dresses.getProduct()));
-		Assert.assertTrue(bp.elementFound(dresses.getFacebook()));
-		Assert.assertTrue(bp.elementFound(dresses.getTweet()));
-		Assert.assertTrue(bp.elementFound(dresses.getProductDes()));
-	}	
-	
-	@Test(enabled = false)
 	public void verifyaddtocart() {
-		dresses.clickwomens();
+		HomePage.clickwomens();
 		dresses.clickproduct();
 		dresses.gotoFrame();
 		dresses.clickaddtocart();
